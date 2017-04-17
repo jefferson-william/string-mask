@@ -1,18 +1,4 @@
-(function(root, factory) {
-    /* istanbul ignore next */
-    if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
-        define([], factory);
-    } else if (typeof exports === 'object') {
-        // Node. Does not work with strict CommonJS, but
-        // only CommonJS-like environments that support module.exports,
-        // like Node.
-        module.exports = factory();
-    } else {
-        // Browser globals (root is window)
-        root.StringMask = factory();
-    }
-}(this, function() {
+define('string-mask', function() {
     var tokens = {
         '0': {pattern: /\d/, _default: '0'},
         '9': {pattern: /\d/, optional: true},
@@ -248,4 +234,4 @@
     };
 
     return StringMask;
-}));
+});
